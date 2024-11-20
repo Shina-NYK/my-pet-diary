@@ -66,7 +66,7 @@ All pet lovers who want an online platform where they can keep all their beloved
 
 ### Endpoints
 
-\*\*GET /user-homepage
+\*\*GET /entries
 
 -   Get list of entries sorted by year
     (expandable list)
@@ -151,46 +151,35 @@ Response:
 
 -   Deploy client and server projects so all commits will be reflected in production
 
--   Feature: List entries by month
+-   Feature: List entries by year
 
     -   Implement list of entries page including a daily entry form on the right of the collapsible entries
-    -   Store given location in database
     -   Create GET /entries endpoint
 
--   Feature: View previous entry
+-   Feature: View entries sorted by month
 
-    -   Implement view single entry page
-    -   Create GET /entries/:id
+    -   Implement view entries by month page
+    -   Create GET /year/month
+
+-   Feature: View single entry
+
+    -   Implement view of a single entry
+    -   Create GET /year/month/:id
 
 -   Feature: Create a new entry
 
     -   Add form input to view entry page
-    -   Create POST /entries
-
--   Feature: Home page
-
--   Feature: Create account
-
-    -   Implement register page + form
-    -   Create POST /users/register endpoint
-
--   Feature: Login
-
-    -   Implement login page + form
-    -   Create POST /users/login endpoint
-
--   Feature: Implement JWT tokens
-
-    -   Server: Update expected requests / responses on protected endpoints
-    -   Client: Store JWT in local storage, include JWT on axios calls
+    -   Create POST /year/month
 
 -   Bug fixes
 
 -   DEMO DAY
 
 ## Nice-to-haves
+### Addition to Sitemap
+-   Register/Main website page
+-   Login
 
-- Account authentification using JWT
 ### Auth
 
 -   JWT auth
@@ -198,7 +187,7 @@ Response:
     -   Added after core features have first been implemented in sprint 1
     -   Store JWT in databse, remove when a user logs out
     
-#### Home Page/Register Page
+#### Main Website Page/Register Page
 
 ![homepage](https://github.com/user-attachments/assets/8128eda7-ff1c-4424-b658-f6752055e2c4)
 
@@ -239,7 +228,24 @@ Response:
     "password": "JWT token"
 }
 ```
+### Addition to Roadmap
+-   Feature: Main Website page
 
+-   Feature: Create account
+
+    -   Implement register page + form
+    -   Create POST /users/register endpoint
+
+-   Feature: Login
+
+    -   Implement login page + form
+    -   Create POST /users/login endpoint
+
+-   Feature: Implement JWT tokens
+
+    -   Server: Update expected requests / responses on protected endpoints
+    -   Client: Store JWT in local storage, include JWT on axios calls
+      
 - Add images/videos
 - A community page that features the fun facts about common pet animals where pet lovers can share memorable stories of their pet companion on the website's main/registration page
 - Fetch fun facts about pets from an external API to display on the website's main page
