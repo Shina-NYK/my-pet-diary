@@ -8,7 +8,7 @@ My Pet Diary is a place where pet lovers can record the memories with pets (and 
 
 ### Problem
 
-This app provides a place for all pet lovers to upload all their memories
+This app provides a place for all pet lovers to upload all the memories of their pets in one place
 
 ### User Profile
 
@@ -35,7 +35,6 @@ All pet lovers who want an online platform where they can keep all their beloved
 -   Server libraries:
     -   knex
     -   express
-    -   NEED TO REVIEW AUTHENTIFICATION: JWT or bcrypt for password hashing
 
 ### APIs
 
@@ -52,34 +51,28 @@ All pet lovers who want an online platform where they can keep all their beloved
 
 ### Mockups
 
-#### Home Page/Register Page
+### User Home Page
+![user-homepage](https://github.com/user-attachments/assets/786bf795-dd43-4f3b-a066-3b67b426d324)
 
-![homepage](https://github.com/user-attachments/assets/8128eda7-ff1c-4424-b658-f6752055e2c4)
+### Entries sorted by month
+![entries sorted by month](https://github.com/user-attachments/assets/bfb8d6b8-02a0-4f6a-bf5a-5f4e0ce9cd71)
 
-#### Login Page
-
-![login](https://github.com/user-attachments/assets/c580e233-98ff-4f26-9748-8fdc6fdb1dcf)
-
+### Vew a single existing entry
+![view existing individual entry](https://github.com/user-attachments/assets/013abc9e-e965-43d2-9cf0-a8e65f9e17b6)
 
 ### Data
-
-![sql_diagram png](https://github.com/user-attachments/assets/1cd13dd4-31cf-4be7-aae6-4bf1346dcaf5)
+![proof of concept_mysql table](https://github.com/user-attachments/assets/04e21826-e71f-47ad-81e9-52e84e15c2dc)
 
 
 ### Endpoints
 
-\*\*GET /entries
+\*\*GET /user-homepage
 
 -   Get list of entries sorted by year
     (expandable list)
--   When the dropdown for the year is clicked, the list will expand to show the total number of entries by month
--   The daily entries can be viewed by further expanding the month dropdown
-
-Parameters:
-
--   longitude: User-provided location as a number
--   latitude: User-provided location as a number
--   token (optional): JWT used to add "visited" boolean
+-   When the dropdown for the year is clicked, the list will expand to show the entries by month
+-   the user can also add a new entry from this page
+-   The individual entries can be viewed by further expanding the month dropdown
 
 Response:
 
@@ -98,27 +91,7 @@ Response:
 }
 ```
 
-\*\*GET /entries/:id
-
--   Get individual entry by id to view the details
-
-Parameters:
-
--   id: entry id as number
-
-Response:
-
-```
-{
-    "id": 1,
-    "pet_name": "Spot"
-    "title": "Walk in the Park",
-    "date": "2023-01-15",
-    "content": "It was sunny."
-}
-```
-
-\*\*POST /entries
+\*\*POST /year/month
 
 -   Logged in user can add new entries
 
@@ -142,46 +115,25 @@ Response:
 }
 ```
 
-**POST /users/register**
+\*\*GET /year/month/:id
 
--   Add a user account
+-   Get individual entry by id to view the details
 
 Parameters:
 
--   email: User's email
--   password: User's provided password
+-   id: entry id as number
 
 Response:
 
 ```
 {
-    "password": "user_password"
+    "id": 1,
+    "pet_name": "Spot"
+    "title": "Walk in the Park",
+    "date": "2023-01-15",
+    "content": "It was sunny."
 }
 ```
-
-**POST /users/login**
-
--   Login a user
-
-Parameters:
-
--   email: User's email
--   password: User's provided password
-
-Response:
-
-```
-{
-    "password": "user_password"
-}
-```
-
-### Auth
-
--   JWT auth
-    -   Before adding auth, all API requests will be using a fake user with id 1
-    -   Added after core features have first been implemented in sprint 1
-    -   Store JWT in databse, remove when a user logs out
 
 ## Roadmap
 
@@ -238,7 +190,58 @@ Response:
 
 ## Nice-to-haves
 
--- Enable camera feature to record epic moments on-the-go for mobile and tablet
--- A community page that features the fun facts about common pet animals where pet lovers can share memorable stories of their pet companion
--- Fetch fun facts about pets from an external API
--- Account authentification using JWT
+- Account authentification using JWT
+### Auth
+
+-   JWT auth
+    -   Before adding auth, all API requests will be using a fake user with id 1
+    -   Added after core features have first been implemented in sprint 1
+    -   Store JWT in databse, remove when a user logs out
+    
+#### Home Page/Register Page
+
+![homepage](https://github.com/user-attachments/assets/8128eda7-ff1c-4424-b658-f6752055e2c4)
+
+#### Login Page
+
+![login](https://github.com/user-attachments/assets/c580e233-98ff-4f26-9748-8fdc6fdb1dcf)
+
+**POST /users/register**
+
+-   Add a user account
+
+Parameters:
+
+-   email: User's email
+-   password: JWT token
+
+Response:
+
+```
+{
+    "password": "JWT token"
+}
+```
+
+**POST /users/login**
+
+-   Login a user
+
+Parameters:
+
+-   email: User's email
+-   password: JWT token
+
+Response:
+
+```
+{
+    "password": "JWT token"
+}
+```
+
+- Add images/videos
+- A community page that features the fun facts about common pet animals where pet lovers can share memorable stories of their pet companion on the website's main/registration page
+- Fetch fun facts about pets from an external API to display on the website's main page
+
+
