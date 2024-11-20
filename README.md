@@ -54,15 +54,17 @@ All pet lovers who want an online platform where they can keep all their beloved
 
 #### Home Page/Register Page
 
-![](homepage.png)
+![homepage](https://github.com/user-attachments/assets/8128eda7-ff1c-4424-b658-f6752055e2c4)
 
 #### Login Page
 
-![](login.png)
+![login](https://github.com/user-attachments/assets/c580e233-98ff-4f26-9748-8fdc6fdb1dcf)
+
 
 ### Data
 
-![](sql_diagram.png)
+![sql_diagram png](https://github.com/user-attachments/assets/1cd13dd4-31cf-4be7-aae6-4bf1346dcaf5)
+
 
 ### Endpoints
 
