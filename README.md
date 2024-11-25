@@ -4,15 +4,15 @@ My Pet Diary
 
 ## Overview
 
-My Pet Diary is a place where pet lovers can record the memories with pets (and also share memorable moments with others). An online community for all pet lovers.
+My Pet Diary is an app designed for pet lovers who enjoy capturing and cherishing their memories in a journal-style format.
 
 ### Problem
 
-This app provides a place for all pet lovers to upload all the memories of their pets in one place
+My Pet Diary provides a place for all pet lovers to upload all of the precious moments with their pets in one place.
 
 ### User Profile
 
-All pet lovers who want an online platform where they can keep all their beloved pet companion
+All pet lovers who want an online platform where they can keep all their beloved pet companions and who like journalling.
 
 ### Features
 
@@ -52,17 +52,20 @@ All pet lovers who want an online platform where they can keep all their beloved
 ### Mockups
 
 ### User Home Page
+
 ![user-homepage](https://github.com/user-attachments/assets/786bf795-dd43-4f3b-a066-3b67b426d324)
 
 ### Entries sorted by month
+
 ![entries sorted by month](https://github.com/user-attachments/assets/bfb8d6b8-02a0-4f6a-bf5a-5f4e0ce9cd71)
 
 ### Vew a single existing entry
+
 ![view existing individual entry](https://github.com/user-attachments/assets/013abc9e-e965-43d2-9cf0-a8e65f9e17b6)
 
 ### Data
-![proof of concept_mysql table](https://github.com/user-attachments/assets/04e21826-e71f-47ad-81e9-52e84e15c2dc)
 
+![proof of concept_mysql table](https://github.com/user-attachments/assets/04e21826-e71f-47ad-81e9-52e84e15c2dc)
 
 ### Endpoints
 
@@ -176,7 +179,9 @@ Response:
 -   DEMO DAY
 
 ## Nice-to-haves
+
 ### Addition to Sitemap
+
 -   Register/Main website page
 -   Login
 
@@ -186,7 +191,7 @@ Response:
     -   Before adding auth, all API requests will be using a fake user with id 1
     -   Added after core features have first been implemented in sprint 1
     -   Store JWT in databse, remove when a user logs out
-    
+
 #### Main Website Page/Register Page
 
 ![homepage](https://github.com/user-attachments/assets/8128eda7-ff1c-4424-b658-f6752055e2c4)
@@ -228,7 +233,9 @@ Response:
     "password": "JWT token"
 }
 ```
+
 ### Addition to Roadmap
+
 -   Feature: Main Website page
 
 -   Feature: Create account
@@ -245,9 +252,7 @@ Response:
 
     -   Server: Update expected requests / responses on protected endpoints
     -   Client: Store JWT in local storage, include JWT on axios calls
-      
-- Add images/videos
-- A community page that features the fun facts about common pet animals where pet lovers can share memorable stories of their pet companion on the website's main/registration page
-- Fetch fun facts about pets from an external API to display on the website's main page
 
-
+-   Add images/videos
+-   A community page that features the fun facts about common pet animals where pet lovers can share memorable stories of their pet companion on the website's main/registration page
+-   Fetch fun facts about pets from an external API to display on the website's main page
