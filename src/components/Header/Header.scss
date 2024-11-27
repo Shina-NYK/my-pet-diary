@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-24;
+    &__title-link {
+        color: inherit;
+    }
+    &__title {
+        color: $Secondary-Dark;
+    }
+    &__log-out-btn {
+        width: 9.375rem;
+        height: 2.5rem;
+        border-radius: 4px;
+        border: none;
+    }
+}
