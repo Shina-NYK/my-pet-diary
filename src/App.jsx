@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import UserHomePage from "./pages/UserHomePage/UserHomePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
     return (
-        <>
-            <h1>In App</h1>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<UserHomePage />} />
+                <Route path="/*" element={<NotFoundPage />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
