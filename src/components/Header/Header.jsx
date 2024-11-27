@@ -4,7 +4,7 @@ function Header() {
     return (
         <header>
             <h1>My Pet Diary</h1>
-            <button></button>
+            <button>Log Out</button>
         </header>
     );
 }
