@@ -24,3 +24,9 @@
         border-top: 2px solid rgba($Secondary-Med1, 0.5);
     }
 }
+
+.dropdown {
+    &__indicator {
+        width: 1.5rem;
+    }
+}
