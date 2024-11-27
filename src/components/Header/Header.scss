@@ -5,16 +5,26 @@
     display: flex;
     justify-content: space-between;
     padding: $spacing-24;
+    background-color: $Primary-Med;
     &__title-link {
         color: inherit;
     }
-    &__title {
-        color: $Secondary-Dark;
-    }
+    // &__title {
+    //     color: $Secondary-Dark;
+    // }
     &__log-out-btn {
         width: 9.375rem;
         height: 2.5rem;
         border-radius: 4px;
         border: none;
+        &:hover {
+            color: $Secondary-Med2;
+            // border: 1px solid $Secondary-Dark;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        &:active {
+            border: 1px solid $Secondary-Dark;
+        }
     }
 }
