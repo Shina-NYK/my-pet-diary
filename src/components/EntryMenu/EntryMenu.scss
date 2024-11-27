@@ -1,0 +1,26 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: $Primary-Light;
+    width: 40vw;
+    height: 100vh;
+    // border-right: 1px solid $Secondary-Med1;
+    &__header {
+        padding: $spacing-24 $spacing-24 $spacing-16 $spacing-24;
+    }
+    &__year-list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__year-item {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: $spacing-12 $spacing-24;
+        border-top: 2px solid rgba($Secondary-Med1, 0.5);
+    }
+}

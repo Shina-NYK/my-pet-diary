@@ -10,6 +10,7 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<UserHomePage />} />
+                <Route path="/user" element={<UserHomePage />} />
                 <Route path="/*" element={<NotFoundPage />} />
             </Routes>
         </BrowserRouter>
