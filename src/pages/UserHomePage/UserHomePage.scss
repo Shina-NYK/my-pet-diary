@@ -1,6 +1,16 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.userHp__main {
-    @include flex-row($gap: 0);
+.userHp {
+    &__main {
+        @include flex-row($gap: 0);
+    }
+    &__container {
+        @include flex-row($gap: 0);
+        width: 100%;
+        @include desktop {
+            width: 80vw;
+            margin: auto;
+        }
+    }
 }

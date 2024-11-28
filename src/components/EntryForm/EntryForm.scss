@@ -1,7 +1,33 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.form__container {
-    width: 100%;
-    background-color: cornflowerblue;
+.form {
+    &__section {
+        @include flex-col($gap: 0);
+        align-items: center;
+        width: 60%;
+    }
+    &__section-header {
+        padding: $spacing-24 $spacing-24 $spacing-16 $spacing-24;
+    }
+    &__form {
+        @include flex-col($gap: $spacing-16);
+        width: 100%;
+        max-width: 50vw;
+        padding: 1.5rem;
+    }
+    &__field-container {
+        @include flex-row($gap: $spacing-4);
+        &--details {
+            @include flex-col($gap: $spacing-4);
+        }
+    }
+    &__save-btn {
+        width: 9.375rem;
+        align-self: flex-end;
+    }
+}
+
+input {
+    border: none;
 }

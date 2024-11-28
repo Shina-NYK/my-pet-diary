@@ -4,7 +4,7 @@
 .menu {
     @include flex-col($gap: 0);
     background-color: $Primary-Light;
-    width: 40vw;
+    width: 40%;
     height: 100vh;
     // border-right: 1px solid $Secondary-Med1;
     &__header {

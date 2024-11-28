@@ -4,8 +4,19 @@
 .header {
     @include flex-row($gap: 0);
     justify-content: space-between;
-    padding: $spacing-24;
-    background-color: $Primary-Med;
+    // padding: $spacing-24;
+
+    &__container {
+        @include flex-row($gap: 0);
+        justify-content: space-between;
+        width: 100%;
+        padding: $spacing-24;
+        background-color: $Primary-Med;
+        @include desktop {
+            width: 80vw;
+            margin: auto;
+        }
+    }
     &__title-link {
         color: inherit;
     }
