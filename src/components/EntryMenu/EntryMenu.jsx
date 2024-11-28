@@ -2,7 +2,7 @@ import "./EntryMenu.scss";
 import arrowUp from "../../assets/Icons/arrow_drop_up.svg";
 import arrowDown from "../../assets/Icons/arrow_drop_down.svg";
 
-function EntryMenu({ years, handleYearClick, yearSelected }) {
+function EntryMenu({ years, handleYearClick, yearSelected, months }) {
     return (
         <section className="menu">
             <h2 className="menu__header">Your Moments</h2>
@@ -28,10 +28,18 @@ function EntryMenu({ years, handleYearClick, yearSelected }) {
                         {/* Checks if the year is expanded/collapsed before displaying the months */}
                         {yearSelected.includes(year.year) && (
                             <ul className="menu__month-list">
-                                <li className="menu__month-item">Jan</li>
-                                <li className="menu__month-item">Feb</li>
+                                {months[year.year]?.map((month) => (
+                                    <li
+                                        className="menu__month-item"
+                                        key={`${year.year}-${month.month}`}
+                                    >
+                                        {month.month}
+                                    </li>
+                                ))}
+
+                                {/* <li className="menu__month-item">Feb</li>
                                 <li className="menu__month-item">Mar</li>
-                                <li className="menu__month-item">Apr</li>
+                                <li className="menu__month-item">Apr</li> */}
                             </ul>
                         )}
                     </li>

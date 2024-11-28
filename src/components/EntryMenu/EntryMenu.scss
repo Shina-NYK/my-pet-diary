@@ -27,8 +27,8 @@
     &__month-list {
         display: flex;
         flex-wrap: wrap;
-        // gap: 0.25rem;
-        justify-content: space-evenly;
+        gap: 0.25rem;
+        // justify-content: space-evenly;
     }
     &__month-item {
         width: 20%;

@@ -10,6 +10,7 @@ function App() {
     const baseApiUrl = import.meta.env.VITE_API_URL;
     const [years, setYears] = useState([]);
     const [yearSelected, setYearSelected] = useState([]);
+    const [months, setMonths] = useState([]);
 
     // Sets the year selected to the year clicked
     const handleYearClick = (year) => {
@@ -32,13 +33,41 @@ function App() {
     const getAllYears = async () => {
         try {
             const { data } = await axios.get(`${baseApiUrl}/entries`);
+            // console.log(data);
             setYears(data);
-        } catch (error) {}
+        } catch (error) {
+            console.error("Error fetching year data: ", error);
+        }
     };
 
     useEffect(() => {
         getAllYears();
     }, []);
+
+    // Get entries grouped by month
+    const getMonths = async (year) => {
+        if (!year) return;
+        try {
+            const { data } = await axios.get(`${baseApiUrl}/entries/${year}`);
+            // console.log(`${baseApiUrl}/entries/${year}`);
+            setMonths((prevState) => ({
+                ...prevState,
+                [year]: data, // store data for each year selected
+            }));
+            console.log(data);
+        } catch (error) {
+            console.error("Error fetching month data: ", error);
+            console.log(error.response);
+        }
+    };
+
+    useEffect(() => {
+        // Get months for each year in the list of expanded years
+        yearSelected.forEach((year) => {
+            getMonths(year);
+            console.log(months);
+        });
+    }, [yearSelected]);
 
     return (
         <BrowserRouter>
@@ -62,6 +91,7 @@ function App() {
                             years={years}
                             handleYearClick={handleYearClick}
                             yearSelected={yearSelected}
+                            months={months}
                         />
                     }
                 />
