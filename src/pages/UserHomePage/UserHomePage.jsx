@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import EntryForm from "../../components/EntryForm/EntryForm";
 import EntryMenu from "../../components/EntryMenu/EntryMenu";
 import "./UserHomePage.scss";
 
@@ -13,6 +11,7 @@ function UserHomePage({ years, handleYearClick, yearSelected, months }) {
                 yearSelected={yearSelected}
                 months={months}
             />
+            <EntryForm />
         </main>
     );
 }

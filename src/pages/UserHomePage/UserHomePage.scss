@@ -1,0 +1,6 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.userHp__main {
+    @include flex-row($gap: 0);
+}

@@ -1,2 +1,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.form__container {
+    width: 100%;
+    background-color: cornflowerblue;
+}
