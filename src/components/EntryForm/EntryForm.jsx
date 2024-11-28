@@ -9,7 +9,7 @@ function EntryForm({ handleFormSubmit }) {
         day: "numeric",
     };
     // Format date with options specified and set to Canadian timezone
-    const currentDate = new Date().toLocaleDateString("en-CA", options);
+    const currentDate = new Date().toLocaleDateString("default", options);
 
     return (
         <section className="form__section">
