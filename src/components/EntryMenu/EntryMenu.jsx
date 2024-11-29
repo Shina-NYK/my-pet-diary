@@ -1,8 +1,18 @@
 import "./EntryMenu.scss";
 import arrowUp from "../../assets/Icons/arrow_drop_up.svg";
 import arrowDown from "../../assets/Icons/arrow_drop_down.svg";
+import { convertToMonthNum } from "../../../utils";
+import { useNavigate } from "react-router-dom";
 
 function EntryMenu({ years, handleYearClick, yearSelected, months }) {
+    const navigate = useNavigate();
+
+    const handleMonthClick = (year, monthName) => {
+        const monthNum = convertToMonthNum(monthName);
+        if (monthNum) {
+            navigate(`/user/${year}/${monthNum}`);
+        }
+    };
     return (
         <section className="menu">
             <h2 className="menu__header">Your Moments</h2>
@@ -32,14 +42,16 @@ function EntryMenu({ years, handleYearClick, yearSelected, months }) {
                                     <li
                                         className="menu__month-item"
                                         key={`${year.year}-${month.month}`}
+                                        onClick={() =>
+                                            handleMonthClick(
+                                                year.year,
+                                                month.month
+                                            )
+                                        }
                                     >
                                         {month.month}
                                     </li>
                                 ))}
-
-                                {/* <li className="menu__month-item">Feb</li>
-                                <li className="menu__month-item">Mar</li>
-                                <li className="menu__month-item">Apr</li> */}
                             </ul>
                         )}
                     </li>

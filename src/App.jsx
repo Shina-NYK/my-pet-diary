@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.scss";
 import UserHomePage from "./pages/UserHomePage/UserHomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Header from "./components/Header/Header";
+import MonthlyEntriesPage from "./pages/MonthlyEntriesPage/MonthlyEntriesPage";
 
 function App() {
     const baseApiUrl = import.meta.env.VITE_API_URL;
@@ -54,7 +55,7 @@ function App() {
                 ...prevState,
                 [year]: data, // store data for each year selected
             }));
-            console.log(data);
+            // console.log(data);
         } catch (error) {
             console.error("Error fetching month data: ", error);
             console.log(error.response);
@@ -81,6 +82,7 @@ function App() {
                             years={years}
                             handleYearClick={handleYearClick}
                             yearSelected={yearSelected}
+                            months={months}
                         />
                     }
                 />
@@ -88,6 +90,17 @@ function App() {
                     path="/user"
                     element={
                         <UserHomePage
+                            years={years}
+                            handleYearClick={handleYearClick}
+                            yearSelected={yearSelected}
+                            months={months}
+                        />
+                    }
+                />
+                <Route
+                    path="/user/:year/:month"
+                    element={
+                        <MonthlyEntriesPage
                             years={years}
                             handleYearClick={handleYearClick}
                             yearSelected={yearSelected}
