@@ -13,4 +13,54 @@
             margin: auto;
         }
     }
+    &__section {
+        @include flex-col($gap: 0);
+        align-items: center;
+        width: 60%;
+    }
+    &__header {
+        padding: $spacing-24 $spacing-24 $spacing-16 $spacing-24;
+        border-bottom: 2px solid rgba($Secondary-Med1, 0.5);
+        width: 100%;
+        text-align: center;
+    }
+    &__list {
+        @include flex-row($gap: $spacing-16);
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        padding: $spacing-24;
+    }
+    &__item {
+        @include flex-col($gap: 0);
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid rgba($Secondary-Med1, 0.7);
+        border-radius: 0.625rem;
+        overflow: hidden;
+        &:hover {
+            border: 1px solid rgba($Secondary-Med2, 0.7);
+            .item__banner {
+                background-color: rgba($Secondary-Med2, 0.7);
+            }
+        }
+    }
+}
+
+.item {
+    &__banner {
+        min-width: 100%;
+        min-height: 1.25rem;
+        background-color: rgba($Secondary-Med1, 0.7);
+    }
+    &__text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        vertical-align: middle;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }

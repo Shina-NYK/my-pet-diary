@@ -50,7 +50,8 @@ function MonthlyEntriesPage({ years, handleYearClick, yearSelected, months }) {
                         {days.length > 0 ? (
                             days.map((day) => (
                                 <li className="entries__item" key={day}>
-                                    day {day}
+                                    <div className="item__banner"></div>
+                                    <h2 className="item__text">{day}</h2>
                                 </li>
                             ))
                         ) : (
