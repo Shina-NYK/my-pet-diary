@@ -3,7 +3,6 @@ import "./EntryForm.scss";
 function EntryForm({ handleFormSubmit }) {
     // Request a weekday along with a long date
     const options = {
-        // weekday: "long",
         year: "numeric",
         month: "long",
         day: "numeric",

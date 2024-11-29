@@ -5,7 +5,7 @@ function Header() {
     return (
         <header className="header">
             <div className="header__container">
-                <Link className="header__title-link">
+                <Link className="header__title-link" to={"/user"}>
                     <h1 className="header__title">My Pet Diary</h1>
                 </Link>
                 <button className="header__log-out-btn">Log Out</button>
