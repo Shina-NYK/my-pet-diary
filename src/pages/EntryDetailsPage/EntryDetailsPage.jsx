@@ -1,6 +1,6 @@
 import "./EntryDetailsPage.scss";
 import EntryMenu from "../../components/EntryMenu/EntryMenu";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -8,6 +8,7 @@ function EntryDetailsPage({ years, handleYearClick, yearSelected, months }) {
     const baseApiUrl = import.meta.env.VITE_API_URL;
     const { year, month, entryId } = useParams();
     const [entryDetails, setEntryDetails] = useState(null);
+    const navigate = useNavigate();
 
     // Get entry details
     const getEntryDetails = async () => {
@@ -73,6 +74,24 @@ function EntryDetailsPage({ years, handleYearClick, yearSelected, months }) {
                             </p>
                         </article>
                     </section>
+                    <div className="details__btn-container">
+                        <button
+                            className="details__btn"
+                            onClick={() => {
+                                navigate("/user");
+                            }}
+                        >
+                            Add New Entry
+                        </button>
+                        <button
+                            className="details__btn"
+                            onClick={() => {
+                                navigate(`/user/${year}/${month}`);
+                            }}
+                        >
+                            Back
+                        </button>
+                    </div>
                 </section>
             </div>
         </main>

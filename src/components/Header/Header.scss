@@ -29,11 +29,10 @@
         background-color: $Primary-Light;
         &:hover {
             color: $Secondary-Med2;
-            border: 1px solid $Secondary-Dark;
             cursor: pointer;
         }
         &:active {
-            border: 1px solid $Secondary-Dark;
+            border: 1px solid rgba($Secondary-Dark, 0.5);
         }
     }
 }
