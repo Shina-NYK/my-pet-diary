@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import EntryMenu from "../../components/EntryMenu/EntryMenu";
 import "./MonthlyEntriesPage.scss";
 import { useState, useEffect } from "react";
@@ -10,6 +10,7 @@ function MonthlyEntriesPage({ years, handleYearClick, yearSelected, months }) {
     const { year, month } = useParams();
     const [entries, setEntries] = useState([]);
     const [days, setDays] = useState([]);
+    const navigate = useNavigate();
 
     const getDailyEntries = async () => {
         try {
@@ -35,6 +36,20 @@ function MonthlyEntriesPage({ years, handleYearClick, yearSelected, months }) {
     // Convert month number to it's matching name
     const monthName = monthNames[parseInt(month, 10) - 1];
 
+    const handleDayClick = (day) => {
+        // match the entry to that of the day clicked
+        const entry = entries.find(
+            (entry) => new Date(entry.date).getDate() === day
+        );
+
+        if (entry) {
+            // check if entry exists
+            navigate(`/user/${year}/${month}/${entry.id}`);
+        } else {
+            console.log(`No entry found for ${month} ${day}, ${year}`);
+        }
+    };
+
     return (
         <main className="entries__main">
             <div className="entries__wrapper">
@@ -49,7 +64,13 @@ function MonthlyEntriesPage({ years, handleYearClick, yearSelected, months }) {
                     <ul className="entries__list">
                         {days.length > 0 ? (
                             days.map((day) => (
-                                <li className="entries__item" key={day}>
+                                <li
+                                    className="entries__item"
+                                    key={day}
+                                    onClick={() => {
+                                        handleDayClick(day);
+                                    }}
+                                >
                                     <div className="item__banner"></div>
                                     <h2 className="item__text">{day}</h2>
                                 </li>
