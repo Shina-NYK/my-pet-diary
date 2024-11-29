@@ -1,0 +1,48 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.details {
+    &__main {
+        @include flex-row($gap: 0);
+    }
+    &__wrapper {
+        @include flex-row($gap: 0);
+        width: 100%;
+        @include desktop {
+            width: 80vw;
+            margin: auto;
+        }
+    }
+    &__section {
+        @include flex-col($gap: 0);
+        align-items: center;
+        width: 60%;
+    }
+    &__header {
+        padding: $spacing-24 $spacing-24 $spacing-16 $spacing-24;
+        border-bottom: 2px solid rgba($Secondary-Med1, 0.5);
+        width: 100%;
+        text-align: center;
+    }
+    &__content-container {
+        @include flex-col($gap: $spacing-16);
+        padding: $spacing-24;
+        width: 100%;
+    }
+    &__content-item {
+        @include flex-row($gap: $spacing-4);
+        &--last {
+            @include flex-col($gap: $spacing-4);
+            margin-top: $spacing-16;
+        }
+    }
+    // &__title {
+
+    // }
+    &__details-entry {
+        border: 1px solid rgba($Secondary-Med1, 0.5);
+        border-radius: 10px;
+        padding: $spacing-4;
+        min-height: 6.25rem;
+    }
+}

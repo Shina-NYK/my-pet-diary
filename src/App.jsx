@@ -6,6 +6,7 @@ import UserHomePage from "./pages/UserHomePage/UserHomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Header from "./components/Header/Header";
 import MonthlyEntriesPage from "./pages/MonthlyEntriesPage/MonthlyEntriesPage";
+import EntryDetailsPage from "./pages/EntryDetailsPage/EntryDetailsPage";
 
 function App() {
     const baseApiUrl = import.meta.env.VITE_API_URL;
@@ -101,6 +102,17 @@ function App() {
                     path="/user/:year/:month"
                     element={
                         <MonthlyEntriesPage
+                            years={years}
+                            handleYearClick={handleYearClick}
+                            yearSelected={yearSelected}
+                            months={months}
+                        />
+                    }
+                />
+                <Route
+                    path="/user/:year/:month/:entryId"
+                    element={
+                        <EntryDetailsPage
                             years={years}
                             handleYearClick={handleYearClick}
                             yearSelected={yearSelected}
