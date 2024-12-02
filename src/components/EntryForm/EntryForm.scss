@@ -16,6 +16,21 @@
         max-width: 50vw;
         padding: 1.5rem;
     }
+    &__input {
+        border-bottom: 1px solid rgba($Primary-Dark, 0.5);
+    }
+    &__textarea {
+        min-height: 6.25rem;
+        border-radius: 4px;
+        outline: 1px solid rgba($Primary-Dark, 0.5);
+        &:focus-visible {
+            border: none;
+            outline: 2px solid rgba($Secondary-Med1, 0.5);
+        }
+        &::placeholder {
+            padding: $spacing-4;
+        }
+    }
     &__field-container {
         @include flex-row($gap: $spacing-4);
         &--details {
@@ -25,6 +40,17 @@
     &__save-btn {
         width: 9.375rem;
         align-self: flex-end;
+        height: 2.5rem;
+        border-radius: 4px;
+        border: none;
+        background-color: rgba($Secondary-Med1, 0.5);
+        &:hover {
+            color: $Secondary-Med2;
+            cursor: pointer;
+        }
+        &:active {
+            border: 1px solid rgba($Secondary-Dark, 0.5);
+        }
     }
 }
 
