@@ -1,21 +1,14 @@
-import { useState } from "react";
 import EntryForm from "../../components/EntryForm/EntryForm";
 import EntryMenu from "../../components/EntryMenu/EntryMenu";
 import "./UserHomePage.scss";
 
-function UserHomePage({ years, handleYearClick, yearSelected, months }) {
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const [formData, setFormData] = useState({
-        title: "",
-        pet_name: "",
-        details: "",
-        // date: new Date().toLocaleDateString(),
-    });
-
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-    };
-
+function UserHomePage({
+    years,
+    handleYearClick,
+    yearSelected,
+    months,
+    addNewEntry,
+}) {
     return (
         <main className="userHp__main">
             <div className="userHp__container">
@@ -25,7 +18,7 @@ function UserHomePage({ years, handleYearClick, yearSelected, months }) {
                     yearSelected={yearSelected}
                     months={months}
                 />
-                <EntryForm handleFormSubmit={handleFormSubmit} />
+                <EntryForm handleFormSubmit={addNewEntry} />
             </div>
         </main>
     );

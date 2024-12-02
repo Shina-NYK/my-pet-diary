@@ -7,8 +7,28 @@ function EntryForm({ handleFormSubmit }) {
         month: "long",
         day: "numeric",
     };
-    // Format date with options specified and set to Canadian timezone
+    // Format date with options specified and set to the default local timezone
     const currentDate = new Date().toLocaleDateString("default", options);
+
+    // const [formData, setFormData] = useState({
+    //     title: "",
+    //     petName: "",
+    //     details: "",
+    // });
+
+    // const handleChange = (event) => {
+    //     const { name, value } = event.target;
+    //     setFormData((prevData) => ({
+    //         ...prevData,
+    //         [name]: value,
+    //     }));
+    // };
+
+    // const onSubmit = (event) => {
+    //     event.preventDefault();
+    //     handleFormSubmit(formData); // Pass the form data to the parent
+    //     setFormData({ title: "", petName: "", details: "" }); // Reset form
+    // };
 
     return (
         <section className="form__section">
@@ -23,6 +43,8 @@ function EntryForm({ handleFormSubmit }) {
                         type="text"
                         name="title"
                         placeholder="Entry title (required)"
+                        // value={formData.title}
+                        // onChange={handleChange}
                         required
                     />
                 </article>
@@ -35,6 +57,8 @@ function EntryForm({ handleFormSubmit }) {
                         type="text"
                         name="petName"
                         placeholder="Your pet's name (optional)"
+                        // value={formData.petName}
+                        // onChange={handleChange}
                     />
                 </article>
                 <article className="form__field-container form__field-container--details">
@@ -46,10 +70,14 @@ function EntryForm({ handleFormSubmit }) {
                         type="text"
                         name="details"
                         placeholder="Please add details for this entry (required)"
+                        // value={formData.details}
+                        // onChange={handleChange}
                         required
                     />
                 </article>
-                <button className="form__save-btn">Save</button>
+                <button className="form__save-btn" type="submit">
+                    Save
+                </button>
             </form>
         </section>
     );
