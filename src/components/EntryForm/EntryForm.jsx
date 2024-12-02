@@ -25,8 +25,9 @@ function EntryForm({ handleFormSubmit }) {
         }));
     };
 
-    const onSubmit = async (e) => {
-        e.preventDefault();
+    const onSubmit = async (event) => {
+        event.preventDefault();
+
         try {
             await handleFormSubmit(formData);
             setFormData({
@@ -34,6 +35,8 @@ function EntryForm({ handleFormSubmit }) {
                 petName: "",
                 details: "",
             });
+
+            alert("You new entry was added successfully!");
         } catch (error) {
             console.error("Error submitting form:", error);
         }
@@ -72,10 +75,10 @@ function EntryForm({ handleFormSubmit }) {
                 </article>
                 <article className="form__field-container form__field-container--details">
                     <label className="form__label" htmlFor="details">
-                        Details
+                        Details:
                     </label>
                     <textarea
-                        className="form__input"
+                        className="form__textarea"
                         type="text"
                         name="details"
                         placeholder="Please add details for this entry (required)"
