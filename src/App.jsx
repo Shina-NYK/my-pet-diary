@@ -67,61 +67,9 @@ function App() {
         // Get months for each year in the list of expanded years
         yearSelected.forEach((year) => {
             getMonths(year);
-            console.log(months);
+            // console.log(months);
         });
     }, [yearSelected]);
-
-    // handleSubmit function
-    const addNewEntry = async (entryData) => {
-        try {
-            const { data } = await axios.post(
-                `${baseApiUrl}/entries`,
-                entryData
-            );
-
-            const entryYear = data.date.split("-")[0]; // Extract year from date
-            const entryMonth = data.date.split("-")[1]; // Extract month from date
-
-            // Update years
-            if (!years.some((year) => year.year === parseInt(entryYear))) {
-                setYears((prevYears) => [
-                    ...prevYears,
-                    { year: parseInt(entryYear) },
-                ]);
-            }
-
-            // Update months
-            setMonths((prevMonths) => {
-                const updatedMonths = { ...prevMonths };
-                if (!updatedMonths[entryYear]) {
-                    updatedMonths[entryYear] = [];
-                }
-                if (
-                    !updatedMonths[entryYear].some(
-                        (month) => month.month === entryMonth
-                    )
-                ) {
-                    updatedMonths[entryYear] = [
-                        ...updatedMonths[entryYear],
-                        { month: entryMonth, entries: [data] },
-                    ];
-                } else {
-                    updatedMonths[entryYear] = updatedMonths[entryYear].map(
-                        (month) =>
-                            month.month === entryMonth
-                                ? {
-                                      ...month,
-                                      entries: [...month.entries, data],
-                                  }
-                                : month
-                    );
-                }
-                return updatedMonths;
-            });
-        } catch (error) {
-            console.error("Error adding new entry:", error);
-        }
-    };
 
     return (
         <BrowserRouter>
@@ -136,7 +84,7 @@ function App() {
                             handleYearClick={handleYearClick}
                             yearSelected={yearSelected}
                             months={months}
-                            // addNewEntry={addNewEntry}
+                            getAllYears={getAllYears}
                         />
                     }
                 />
@@ -148,7 +96,7 @@ function App() {
                             handleYearClick={handleYearClick}
                             yearSelected={yearSelected}
                             months={months}
-                            // addNewEntry={addNewEntry}
+                            getAllYears={getAllYears}
                         />
                     }
                 />

@@ -1,4 +1,5 @@
 import "./EntryForm.scss";
+import { useState } from "react";
 
 function EntryForm({ handleFormSubmit }) {
     // Request a weekday along with a long date
@@ -10,30 +11,38 @@ function EntryForm({ handleFormSubmit }) {
     // Format date with options specified and set to the default local timezone
     const currentDate = new Date().toLocaleDateString("default", options);
 
-    // const [formData, setFormData] = useState({
-    //     title: "",
-    //     petName: "",
-    //     details: "",
-    // });
+    const [formData, setFormData] = useState({
+        title: "",
+        petName: "",
+        details: "",
+    });
 
-    // const handleChange = (event) => {
-    //     const { name, value } = event.target;
-    //     setFormData((prevData) => ({
-    //         ...prevData,
-    //         [name]: value,
-    //     }));
-    // };
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
+    };
 
-    // const onSubmit = (event) => {
-    //     event.preventDefault();
-    //     handleFormSubmit(formData); // Pass the form data to the parent
-    //     setFormData({ title: "", petName: "", details: "" }); // Reset form
-    // };
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await handleFormSubmit(formData);
+            setFormData({
+                title: "",
+                petName: "",
+                details: "",
+            });
+        } catch (error) {
+            console.error("Error submitting form:", error);
+        }
+    };
 
     return (
         <section className="form__section">
             <h2 className="form__section-header">{currentDate}</h2>
-            <form className="form__form" onSubmit={handleFormSubmit}>
+            <form className="form__form" onSubmit={onSubmit}>
                 <article className="form__field-container">
                     <label className="form__label" htmlFor="title">
                         Title:
@@ -43,8 +52,8 @@ function EntryForm({ handleFormSubmit }) {
                         type="text"
                         name="title"
                         placeholder="Entry title (required)"
-                        // value={formData.title}
-                        // onChange={handleChange}
+                        value={formData.title}
+                        onChange={handleChange}
                         required
                     />
                 </article>
@@ -57,8 +66,8 @@ function EntryForm({ handleFormSubmit }) {
                         type="text"
                         name="petName"
                         placeholder="Your pet's name (optional)"
-                        // value={formData.petName}
-                        // onChange={handleChange}
+                        value={formData.petName}
+                        onChange={handleChange}
                     />
                 </article>
                 <article className="form__field-container form__field-container--details">
@@ -70,8 +79,8 @@ function EntryForm({ handleFormSubmit }) {
                         type="text"
                         name="details"
                         placeholder="Please add details for this entry (required)"
-                        // value={formData.details}
-                        // onChange={handleChange}
+                        value={formData.details}
+                        onChange={handleChange}
                         required
                     />
                 </article>
