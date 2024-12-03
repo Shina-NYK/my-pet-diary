@@ -20,7 +20,7 @@ function UserHomePage({
                 pet_name: petName || null,
                 details,
             });
-            // console.log("New entry added:", data);
+
             getAllYears(); // Refresh the years view
         } catch (error) {
             console.error("Error adding new entry:", error);

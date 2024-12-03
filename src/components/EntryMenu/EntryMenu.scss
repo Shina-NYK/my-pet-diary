@@ -6,7 +6,6 @@
     background-color: $Primary-Light;
     width: 40%;
     height: 100vh;
-    // border-right: 1px solid $Secondary-Med1;
     &__header {
         padding: $spacing-24 $spacing-24 $spacing-16 $spacing-24;
     }
@@ -16,7 +15,6 @@
     }
     &__year-item {
         @include flex-col($gap: 0);
-        // justify-content: space-between;
         width: 100%;
         padding: $spacing-12 $spacing-24;
         border-top: 2px solid rgba($Secondary-Med1, 0.5);
@@ -30,6 +28,7 @@
         text-align: center;
         &:hover {
             font-weight: 700;
+            cursor: pointer;
         }
     }
 }
@@ -39,6 +38,9 @@
         @include flex-row($gap: 0);
         justify-content: space-between;
         width: 100%;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &__indicator {
         width: 1.5rem;

@@ -36,13 +36,13 @@
         @include flex-col($gap: 0);
         width: 5rem;
         height: 5rem;
-        border: 1px solid rgba($Secondary-Med1, 0.7);
+        border: 2px solid rgba($Secondary-Med1, 0.5);
         border-radius: 0.625rem;
         overflow: hidden;
         &:hover {
-            border: 1px solid rgba($Secondary-Med2, 0.7);
+            border: 2px solid rgba($Secondary-Med2, 0.5);
             .item__banner {
-                background-color: rgba($Secondary-Med2, 0.7);
+                background-color: rgba($Secondary-Med2, 0.5);
             }
         }
     }
@@ -52,7 +52,7 @@
     &__banner {
         min-width: 100%;
         min-height: 1.25rem;
-        background-color: rgba($Secondary-Med1, 0.7);
+        background-color: rgba($Secondary-Med1, 0.5);
     }
     &__text {
         display: flex;
