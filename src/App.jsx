@@ -7,6 +7,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Header from "./components/Header/Header";
 import MonthlyEntriesPage from "./pages/MonthlyEntriesPage/MonthlyEntriesPage";
 import EntryDetailsPage from "./pages/EntryDetailsPage/EntryDetailsPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 function App() {
     const baseApiUrl = import.meta.env.VITE_API_URL;
@@ -35,7 +36,7 @@ function App() {
     const getAllYears = async () => {
         try {
             const { data } = await axios.get(`${baseApiUrl}/entries`);
-            // console.log(data);
+
             setYears(data);
         } catch (error) {
             console.error("Error fetching year data: ", error);
@@ -51,12 +52,11 @@ function App() {
         if (!year) return;
         try {
             const { data } = await axios.get(`${baseApiUrl}/entries/${year}`);
-            // console.log(`${baseApiUrl}/entries/${year}`);
+
             setMonths((prevState) => ({
                 ...prevState,
                 [year]: data, // store data for each year selected
             }));
-            // console.log(data);
         } catch (error) {
             console.error("Error fetching month data: ", error);
             console.log(error.response);
@@ -67,7 +67,6 @@ function App() {
         // Get months for each year in the list of expanded years
         yearSelected.forEach((year) => {
             getMonths(year);
-            // console.log(months);
         });
     }, [yearSelected]);
 
@@ -122,6 +121,7 @@ function App() {
                         />
                     }
                 />
+                <Route path="/about" element={<AboutPage />} />
                 <Route path="/*" element={<NotFoundPage />} />
             </Routes>
         </BrowserRouter>

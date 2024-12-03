@@ -11,7 +11,12 @@ function Header() {
                     <h1 className="header__title">My Pet Diary</h1>
                 </Link>
                 <div className="header__btn-wrapper">
-                    <button className="header__btn">About</button>
+                    <button
+                        className="header__btn"
+                        onClick={() => navigate("/about")}
+                    >
+                        About
+                    </button>
                     <button className="header__btn">Log Out</button>
                 </div>
             </nav>
