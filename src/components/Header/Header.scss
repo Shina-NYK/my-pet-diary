@@ -4,12 +4,13 @@
 .header {
     @include flex-row($gap: 0);
     justify-content: space-between;
-    &__container {
+    background-color: rgba($Secondary-Med1, 0.5);
+    &__nav {
         @include flex-row($gap: 0);
         justify-content: space-between;
         width: 100%;
         padding: $spacing-24;
-        background-color: $Primary-Med;
+
         @include desktop {
             width: 80vw;
             margin: auto;
@@ -18,10 +19,10 @@
     &__title-link {
         color: inherit;
     }
-    // &__title {
-    //     color: $Secondary-Dark;
-    // }
-    &__log-out-btn {
+    &__btn-wrapper {
+        @include flex-row($gap: $spacing-16);
+    }
+    &__btn {
         width: 9.375rem;
         height: 2.5rem;
         border-radius: 4px;

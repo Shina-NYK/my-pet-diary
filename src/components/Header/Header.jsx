@@ -1,15 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
 
 function Header() {
+    const navigate = useNavigate();
+
     return (
         <header className="header">
-            <div className="header__container">
+            <nav className="header__nav">
                 <Link className="header__title-link" to={"/user"}>
                     <h1 className="header__title">My Pet Diary</h1>
                 </Link>
-                <button className="header__log-out-btn">Log Out</button>
-            </div>
+                <div className="header__btn-wrapper">
+                    <button className="header__btn">About</button>
+                    <button className="header__btn">Log Out</button>
+                </div>
+            </nav>
         </header>
     );
 }
