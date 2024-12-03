@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
+import logo from "../../assets/logo/my-pet-diary.png";
 
 function Header() {
     const navigate = useNavigate();
@@ -8,7 +9,11 @@ function Header() {
         <header className="header">
             <nav className="header__nav">
                 <Link className="header__title-link" to={"/user"}>
-                    <h1 className="header__title">My Pet Diary</h1>
+                    <img
+                        className="header__logo"
+                        src={logo}
+                        alt="My Pet Diary logo"
+                    />
                 </Link>
                 <div className="header__btn-wrapper">
                     <button

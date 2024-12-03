@@ -9,7 +9,7 @@
         @include flex-row($gap: 0);
         justify-content: space-between;
         width: 100%;
-        padding: $spacing-24;
+        padding: $spacing-16 $spacing-24;
 
         @include desktop {
             width: 80vw;
@@ -19,8 +19,12 @@
     &__title-link {
         color: inherit;
     }
+    &__logo {
+        width: 6.25rem;
+    }
     &__btn-wrapper {
         @include flex-row($gap: $spacing-16);
+        align-items: center;
     }
     &__btn {
         width: 9.375rem;
