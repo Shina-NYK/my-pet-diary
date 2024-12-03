@@ -21,6 +21,11 @@
     }
     &__input {
         border-bottom: 1px solid rgba($Primary-Dark, 0.5);
+        margin-left: $spacing-4;
+        &:focus-visible {
+            border: none;
+            outline: 2px solid rgba($Secondary-Med1, 0.5);
+        }
     }
     &__textarea {
         min-height: 6.25rem;
