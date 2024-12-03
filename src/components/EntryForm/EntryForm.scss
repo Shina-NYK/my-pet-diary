@@ -9,6 +9,9 @@
     }
     &__section-header {
         padding: $spacing-24 $spacing-24 $spacing-16 $spacing-24;
+        border-bottom: 2px solid rgba($Secondary-Med1, 0.5);
+        width: 100%;
+        text-align: center;
     }
     &__form {
         @include flex-col($gap: $spacing-16);
