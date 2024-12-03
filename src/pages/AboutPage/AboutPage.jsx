@@ -44,12 +44,13 @@ function AboutPage() {
                     </p>
                     <p>
                         One unforgettable memory about Mumu is when her love for
-                        rooftop adventures led her too close to the edge, and
-                        she fell. My dad, who was working on the roof, rushed
-                        down in a panic. Luckily, she landed on a pile of nets
-                        that softened the fall, emerging unscathed.
-                        Surprisingly, she wasn't scared off and still eagerly
-                        enjoys her rooftop trips, healthy as ever.
+                        rooftop adventures led her too close to the edge of the
+                        roof, and she slipped. My dad, who was working on the
+                        roof, rushed down in a panic. Luckily, she landed on a
+                        pile of nets that softened the fall, emerging unscathed,
+                        to our relief. Surprisingly, she wasn't scared off and
+                        still eagerly enjoys her rooftop trips, healthy and
+                        eager for adventure as ever.
                     </p>
                     <p className="about__idea-details">
                         What are <em className="text-bold">your</em> pet's
