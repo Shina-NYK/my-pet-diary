@@ -52,7 +52,7 @@ function AboutPage() {
                         still eagerly enjoys her rooftop trips, healthy and
                         eager for adventure as ever.
                     </p>
-                    <p className="about__idea-details">
+                    <p className="about__idea-details about__idea-details--last">
                         What are <em className="text-bold">your</em> pet's
                         precious moments?
                     </p>
