@@ -15,15 +15,12 @@ function Header() {
                         alt="My Pet Diary logo"
                     />
                 </Link>
-                <div className="header__btn-wrapper">
-                    <button
-                        className="header__btn"
-                        onClick={() => navigate("/about")}
-                    >
-                        About
-                    </button>
-                    <button className="header__btn">Log Out</button>
-                </div>
+                <button
+                    className="header__btn"
+                    onClick={() => navigate("/about")}
+                >
+                    About
+                </button>
             </nav>
         </header>
     );
